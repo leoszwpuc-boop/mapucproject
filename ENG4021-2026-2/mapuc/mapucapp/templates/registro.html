@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>MaPUC - Registro</title>
+</head>
+<body>
+    <h1>Criar conta</h1>
+    <form method="POST" action="{% url 'registro' %}">
+        {% csrf_token %}
+        <label>Nome de usuário</label><br>
+        <input type="text" name="username" required><br><br>
+        <label>E-mail</label><br>
+        <input type="email" name="email" required><br><br>
+        <label>Senha</label><br>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Registrar</button>
+    </form>
+    <p>Já tem conta? <a href="{% url 'login' %}">Entrar</a></p>
+</body>
+</html>

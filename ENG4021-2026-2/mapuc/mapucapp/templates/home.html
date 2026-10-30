@@ -33,4 +33,5 @@
         {% endfor %}
     </div>
 </body>
+<p>Bem-vindo, {{ request.user }} — <a href="{% url 'logout' %}">Sair</a></p>
 </html>
