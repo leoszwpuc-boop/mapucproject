@@ -13,6 +13,10 @@
         <span>Lumière</span>
     </div>
 
+    <div style="padding: 1rem;">
+        <a href="{% url 'movie_create' %}" class="btn">+ Novo filme</a>
+    </div>
+
     <div class="catalog">
         {% for movie in movies %}
         <div class="card" style="width: 18rem;">
@@ -20,6 +24,8 @@
             <div>
                 <h5>{{ movie.title }}</h5>
                 <p>{{ movie.description }}</p>
+                <a href="{% url 'movie_update' movie.pk %}" class="btn">Atualizar</a>
+                <a href="{% url 'movie_delete' movie.pk %}" class="btn btn-danger">Deletar</a>
             </div>
         </div>
         {% empty %}

@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="header"><span>Lumière</span></div>
+    <main style="padding: 1rem; max-width: 600px;">
+        <h1>{{ action }}</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Salvar</button>
+            <a href="{% url 'home' %}" class="btn">Cancelar</a>
+        </form>
+    </main>
+</body>
+</html>
